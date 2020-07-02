@@ -1,0 +1,124 @@
+//·························[MY SUGAR FUNCTIONS]·························
+        //=====| CENTER IN CONSOLE FUNCTION |=====
+        static void WRITECENTER(string texttocenter)
+        {
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (texttocenter.Length / 2)) + "}", texttocenter));
+        }
+        //=====| PAUSE&CLEAR FUNCTION |=====
+        static void PAUSECLEAR()
+        {
+            Console.WriteLine("\n--> Appuyer sur une touche pour continuer...");
+            Console.ReadLine();
+            Console.Clear();
+            return;
+        }
+        //=====| PAUSE FUNCTION |=====
+        static void PAUSE()
+        {
+            Console.WriteLine("\n--> Appuyer sur une touche pour continuer...");
+            Console.ReadLine();
+            return;
+        }
+		//=====| NOT EXIST FUNCTION |=====
+            static void NOTXIST()
+            {
+                Console.BackgroundColor = ConsoleColor.DarkYellow;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("");
+                WRITECENTER("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄");
+                WRITECENTER("█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█");
+                WRITECENTER("█                                                        █");
+                WRITECENTER("█   !!!  IL N'EXISTE PAS DE VOITURE DANS LA LISTE  !!!   █");
+                WRITECENTER("█                                                        █");
+                WRITECENTER("█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█");
+                WRITECENTER("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
+                WRITECENTER("\n\n♣ VEUILLEZ AJOUTER UNE VOITURE DANS LE PROGRAMME ♣");
+                PAUSE();
+            }    
+        //====================================
+
+        //=====| ASK BEFORE QUITTING A WINFORM |=====
+         private void qUITTERToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult choice =  MessageBox.Show(string.Format("ETES VOUS SURE DE VOULOIR QUITTER ? "),
+            "ATTENTION",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (choice == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        //=====| MAXIMIZE A WINFORM |=====
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //====MAXIMIZE THE FORM ON LOAD====
+            Computer myComputer = new Computer();
+            this.Width = myComputer.Screen.Bounds.Width;
+            this.Height = myComputer.Screen.Bounds.Height;
+            this.Location = new Point(0, 0);
+        }
+        ..........
+        
+        Set the form         :  this.WindowState = FormWindowState.Maximized;
+        Center the form with :  this.CenterToScreen();
+        Get the screen resolution using following code and set the size of your forms accordingly
+
+        int height = Screen.PrimaryScreen.Bounds.Height; 
+        int width = Screen.PrimaryScreen.Bounds.Width;
+
+        ...........
+
+        //=====| CLOSE ALL WINFORM CHILD |=====
+        private void closeForms()
+        {
+            Form[] allFenetres = this.MdiChildren;
+
+            //For each child form set the window state to Maximized
+            foreach (Form childForm in allFenetres)
+            {
+                childForm.Close();
+            }
+        }
+
+        //=====| SET MATERIAL DESIGN FORM |=====
+        public partial class loginForm : MaterialSkin.Controls.MaterialForm{
+            public loginForm()
+            {
+                InitializeComponent();
+                this.CenterToScreen();
+                //Init skin
+                MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
+                skinManager.AddFormToManage(this);
+                skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
+                skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green900, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, 
+                    MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+            }
+        }
+		//WARNING MSG BOX
+		        MessageBox.Show(string.Format(" AUCUN ELEMENT A SUPPRIMER !\nSelectionnez d'abord une Ville"),
+                "ERREUR FORMULAIRE !",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1);
+		// DEBUG MSG BOX
+			    MessageBox.Show(string.Format("WORKING !\nDEBUGGING"),
+                "TEST !",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1);
+				
+		//======| OPEN IN BROWSER |======
+		System.Diagnostics.Process.Start("http://orbitturner.yj.fr/");
+		
+		private void creatorMailLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            creatorMailLbl.LinkVisited = true;
+            //OPENS THE MAIL IN THE BROWSER
+            System.Diagnostics.Process.Start("mailto:orbitturner@orbitturner.yj.fr");
+        }
+//·························[END OF SUGAR FUNCTIONS]·························

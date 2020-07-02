@@ -1,0 +1,18 @@
+Migrate from others
+You can migrate from other environments to Laragon easily:
+
+Copy code
+Copy all of your folders in your former Document Root to C:\laragon\www
+
+Copy databases:
+Dump all databases:
+Start your current environment
+Run:
+
+mysqldump.exe --all-databases --user=root --password=> C:\laragon\tmp\alldb_13012020.sql
+Stop your current environment
+
+Restore all databases to Laragon:
+Start Laragon
+Run:
+mysql -u root -p < C:\laragon\tmp\alldb.sql

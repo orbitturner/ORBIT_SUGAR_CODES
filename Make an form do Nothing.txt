@@ -1,0 +1,1 @@
+                            <form class="text-center" style="color: #757575;" method="post" id="newdepotretraitform" onsubmit="document.getElementById('newdepotretraitform').reset(); return false;" >
