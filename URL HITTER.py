@@ -16,12 +16,16 @@ This program allows you to hit an url X times.
 '''
 import urllib.request as urllib2
 
+print("\n===============================> WELCOME <===============================\n")
+print("\t\t!! URL HITTER V1.0.1 !!")
+print("\n==========================================================================\n")
+
 # RECUPERATION & CONTROLE DES VALEURS SAISIES
 correct = False
 while not(correct):
     try:
-        url = str(input("-> VEUILLEZ DONNER L'URL A ATTACKER: "))
-        iteration = int(input("-> VEUILLEZ DONNER LE NOMBRE DE HIT A FAIRE: "))
+        url = str(input("\n-> VEUILLEZ DONNER L'URL A ATTACKER: "))
+        iteration = int(input("\n-> VEUILLEZ DONNER LE NOMBRE DE HIT A FAIRE: "))
         # assert hd >= 0 and md >= 0 and ha >= 0 and ma >= 0 
     except ValueError:
         print("\n!! VOUS AVEZ SAISI UNE VALEUR INCORRECTE !!")
@@ -34,7 +38,7 @@ print("")
 print("\n--> FETCHING THE URL... ")
 try:
 	for _ in range(iteration):
-    urllib2.urlopen(url)
+		urllib2.urlopen(url)
 except:
 	print("\n===============================> STATE <===============================\n")
 	print("\t\t!! AN ERROR OCURRED DURING EXECUTION !!")
