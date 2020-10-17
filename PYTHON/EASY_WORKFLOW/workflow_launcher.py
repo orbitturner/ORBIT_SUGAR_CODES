@@ -59,7 +59,9 @@ while running:
     if choice == 1:
         print("->LAUNCHING CODING PROGRAMS...")
         subprocess.Popen('C:\\laragon\\laragon.exe')
+        subprocess.Popen('"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"')
         subprocess.Popen('C:\\Program Files\\Microsoft VS Code\\Code.exe')
+        subprocess.Popen('C:\\Users\\shado\\AppData\\Local\\Discord\\Update.exe --processStart Discord.exe')
         print(" ! Sucessfully Launched !")
         
     elif choice == 2:

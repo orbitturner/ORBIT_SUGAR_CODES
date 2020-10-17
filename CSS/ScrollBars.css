@@ -12,3 +12,66 @@
 *  AUTHOR : MOHAMED GUEYE [Orbit Turner] - Linkedin: www.linkedin.com/in/orbitturner - Email: orbitturner@orbitturner.com - Country: Senegal
 *                              GITHUB : Orbit Turner    -   Website: http://orbitturner.com/ 
 */
+/* ================================MULTI GRADIENT SCROLLBAR FAT================================ */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background:  linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(7, 0, 211, 1) 100%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  box-shadow: 0px 0px 0px 100000vh black;
+}
+/* ================================================================ */
+/* ================================GRADIENT SCROLLBAR SLIM================================ */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background:  linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(7, 0, 211, 1) 100%);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: transparent;
+	box-shadow: 0px 0px 0px 100000vh black;
+}
+/* ================================================================ */
+/*===========================>{ W E B   S T Y L E S }<===========================*/
+::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.9) !important;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9) !important;
+	border: 1px solid #000 !important;
+	border-radius: 10px !important;
+	background-color: #25223C !important;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #25223C;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #20AD96;
+	background-image: -webkit-linear-gradient(90deg,
+											  transparent,
+											  rgba(0, 0, 0, 0.4) 50%,
+											  transparent,
+											  transparent)
+}
+
+/*SELECTION SET*/
+::selection{
+    background: #20AD96;
+    color: #fff;
+}
+
+/*===========================>{ E N D  OF  W E B   S T Y L E S }<===========================*/
