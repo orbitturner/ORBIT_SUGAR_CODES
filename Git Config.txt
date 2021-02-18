@@ -1,0 +1,44 @@
+{% comment %} ___________________ {% endcomment %}
+{% comment %}    NOTES DE CONFIG  {% endcomment %}
+{% comment %} ___________________ {% endcomment %}
+
+_______________________________________________________
+{% comment %} CONFIG USER {% endcomment %}
+_______________________________________________________
+$ git config --global user.name 'orbitturner'
+$ git config --global user.email orbitturner@gmail.com
+❯ git config --global credential.helper cache timeout=3600
+
+// [ REPOSITORY CONFIG ] //
+echo "# siren" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/orbitturner/siren.git
+git push -u origin master
+
+// [ LINKING CONFIG ] //
+git remote rm origin
+git config master.remote origin
+git config master.merge refs/heads/master
+
+// [ BRANCH CONFIG ] //
+git branch
+git branch <namebranche>
+git checkout -b <new-branch>
+To see all local and remote branches, run this command:
+git branch -a
+// delete branch locally
+git branch -d localBranchName
+SWITCH BRANCH:
+git checkout <branchname>
+git push <new-remote-repo> nomBranch~
+git push origin --delete Exercice5
+
+// [ VERSION CONFIG ] //
+ git tag -a v1.2 -m "DESCRIPTION"
+ git tag -a v1.2 9fceb02
+ https://git-scm.com/book/fr/v2/Les-bases-de-Git-%C3%89tiquetage
+
+// [ LOGS ] //
+git log --pretty=oneline
