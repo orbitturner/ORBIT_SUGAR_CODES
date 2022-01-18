@@ -28,7 +28,7 @@ function radio()
 // ================================
 // |     AJAX  -  VANILLA JS      |
 // ================================
-Here is how you can submit your form via Ajax:
+// Here is how you can submit your form via Ajax:
 
 function submitFormAjax() {
     let xmlhttp= window.XMLHttpRequest ?
@@ -45,14 +45,14 @@ function submitFormAjax() {
     xmlhttp.open("GET","your_url.php?name=" + name + "&email=" + email, true);
     xmlhttp.send();
 }
-This example is using GET, but you could also use POST:
+// This example is using GET, but you could also use POST:
 
 xmlhttp.open("POST","your_url.php",true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 xmlhttp.send("name=" + name + "&email=" + email);
-Note:
+// Note:
 
-You must call submitFormAjax() after validateFormOnSubmit is done with no errors, here:
+// You must call submitFormAjax() after validateFormOnSubmit is done with no errors, here:
 
 if (reason.length == 0) {
     // Show some loading image and submit form

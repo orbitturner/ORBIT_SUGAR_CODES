@@ -3,7 +3,7 @@
 $conn = array(
     'dbname'     => 'root',  
     'user'       => 'root',  
-    'password'   => '@Shadowtech1064997',  
+    'password'   => '',  
     'host'       => '127.0.0.1',  
     'driver'     => 'pdo_mysql',
     'path' => __DIR__ . '/db.sqlite',
